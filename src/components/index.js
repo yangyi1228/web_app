@@ -6,6 +6,7 @@ const importFn = require.context('./', false, /\.vue$/)
 function installComponents() {
     importFn.keys().forEach(name => {
         const component = importFn(name).default
+        console.log(component);
         Vue.component(component.name,component)
     });
 }
