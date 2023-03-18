@@ -13,7 +13,8 @@ const routes = [
         name: 'home',
         component: Home,
         meta: {
-            show:true
+            show: true,
+            title:'品优购-首页'
         }
     },
     {
@@ -21,7 +22,8 @@ const routes = [
         name: 'login',
         component: Login,
         meta: {
-            show: false
+            show: false,
+            title:'品优购-登录'
         }
     },
     {
@@ -29,7 +31,8 @@ const routes = [
         name: 'register',
         component: register,
         meta: {
-            show: false
+            show: false,
+            title:'品优购-注册'
         }
     }
 ]
@@ -44,7 +47,13 @@ const router = new VueRouter({
             y: 0
         }
     }
+})
 
+router.beforeEach((to, from, next) => {
+    if (to.meta.title) {
+        document.title = to.meta.title
+    }
+    next()
 })
 
 export default router

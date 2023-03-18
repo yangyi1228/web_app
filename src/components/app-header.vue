@@ -432,6 +432,18 @@ export default {
                     background: url('@/static/images/箭头 下.png') no-repeat;
                     transform: rotateZ(-90deg);
                 }
+
+                &:hover {
+                    background-color: #b1191a;
+                    color: white;
+                    .ra_icon{
+                        background: url('@/static/images/右箭头.png') no-repeat;
+                        transform: rotateZ(0deg);
+                    }
+                    .cart_icon{
+                        background: url('@/static/images/购物车.png') no-repeat;
+                    }
+                }
             }
         }
 
